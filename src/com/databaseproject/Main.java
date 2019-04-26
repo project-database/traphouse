@@ -4,6 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("hoi");
-        System.out.println("kanker");
+        System.out.println("nana");
     }
 }
