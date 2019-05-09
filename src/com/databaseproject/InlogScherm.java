@@ -22,7 +22,6 @@ public class InlogScherm extends JFrame implements ActionListener {
         setResizable(true);
         setSize(new Dimension(350, 300));
         InlogComponent();
-
     }
 
     public void InlogComponent(){
