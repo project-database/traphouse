@@ -2,16 +2,14 @@ package com.databaseproject;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class FullHouseMenu extends JFrame {
-    String data[][]={ {"101","Jan","100"},{"102","Piet","200"},{"101","Klaas","30"}};
-    String column[]={"ID","Naam","Inleggeld"};
+public class FullHouseMenu extends JFrame implements ActionListener {
 
-    private JTable tabel = new JTable(data, column);
-
-    private JButton gastRegistreren = new JButton("Gast registreren");
-    private JButton toernooiAanmaken = new JButton("Toernooi maken");
-
+    private JButton gastBeheren = new JButton("Gast beheren");
+    private JButton toernooiBeheren = new JButton("Toernooi beheren");
+    private JButton masterclassBeheren = new JButton("Masterclass beheren");
 
     public FullHouseMenu() throws HeadlessException {
         setTitle("FullHouse - menu");
@@ -23,15 +21,35 @@ public class FullHouseMenu extends JFrame {
 
     public void MenuComponent(){
         JPanel panel = new JPanel();
-
-        add(new JScrollPane(tabel));
-        panel.add(tabel.getTableHeader());
-        panel.add(gastRegistreren);
-        panel.add(toernooiAanmaken);
+        panel.add(gastBeheren);
+        gastBeheren.addActionListener(this);
+        panel.add(toernooiBeheren);
+        toernooiBeheren.addActionListener(this);
+        panel.add(masterclassBeheren);
+        masterclassBeheren.addActionListener(this);
         GridLayout grid = new GridLayout(3, 4, 30, 20);
         Container content = this.getContentPane();
         content.setLayout(grid);
         add(panel);
         pack();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == gastBeheren) {
+            GastScherm gast = new GastScherm();
+            gast.setLocationRelativeTo(gast);
+            gast.setVisible(true);
+        }
+        if (e.getSource() == toernooiBeheren) {
+            ToernooiScherm toernooi = new ToernooiScherm();
+            toernooi.setLocationRelativeTo(toernooi);
+            toernooi.setVisible(true);
+        }
+        if (e.getSource() == masterclassBeheren) {
+            MasterclassScherm masterclass = new MasterclassScherm();
+            masterclass.setLocationRelativeTo(masterclass);
+            masterclass.setVisible(true);
+        }
     }
 }
