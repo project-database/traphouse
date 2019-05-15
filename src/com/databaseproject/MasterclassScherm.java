@@ -24,7 +24,6 @@ public class MasterclassScherm extends JFrame implements ActionListener {
     }
 
     private void MasterclassComponent() {
-
         JPanel panel = new JPanel();
         panel.add(masterclassAanmaken);
         masterclassAanmaken.addActionListener(this);
@@ -37,14 +36,10 @@ public class MasterclassScherm extends JFrame implements ActionListener {
         content.setLayout(grid);
         add(panel);
         pack();
-
-
-
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
         if (e.getSource() == gastInscrhijvenMasterclass) {
             JDialog gastInschrijvenPopup = new JDialog();
             gastInschrijvenPopup.setSize(500, 500);
@@ -55,6 +50,5 @@ public class MasterclassScherm extends JFrame implements ActionListener {
             masterclassAanmakenPopup.setSize(500, 500);
             masterclassAanmakenPopup.setVisible(true);
         }
-
     }
 }

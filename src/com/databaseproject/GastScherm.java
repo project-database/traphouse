@@ -24,7 +24,6 @@ public class GastScherm extends JFrame implements ActionListener {
 
     public void GastComponent() {
         JPanel panel = new JPanel();
-
         aanmelden.addActionListener(this);
         panel.add(aanmelden);
         panel.add(verwijderen);
@@ -39,11 +38,8 @@ public class GastScherm extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
         JDialog aanmeldenDatabase = new JDialog();
         aanmeldenDatabase.setSize(100, 100);
         aanmeldenDatabase.setVisible(true);
-
-
     }
 }
