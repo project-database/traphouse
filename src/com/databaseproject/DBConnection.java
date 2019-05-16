@@ -5,7 +5,7 @@ import java.sql.*;
 public class DBConnection {
     public static boolean LoginCheck(String username, String password){
         try {
-            Connection connect = DriverManager.getConnection("jkdsckjhdsjckh", "asdfasdf", "sdafasdf");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://meru.hhs.nl/18120970", "18120970", "iecooH9sia");
             PreparedStatement statement = connect.prepareStatement("SELECT * FROM account WHERE username = ? AND password = ?");
 
             statement.setString(1, username);
@@ -14,11 +14,9 @@ public class DBConnection {
             ResultSet resultset = statement.executeQuery();
 
             if(resultset.next()){
-                System.out.println("Login correct.");
                 connect.close();
                 return true;
             }else{
-                System.out.println("Login failed.");
                 connect.close();
                 return false;
             }
