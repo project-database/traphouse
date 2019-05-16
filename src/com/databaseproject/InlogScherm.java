@@ -53,9 +53,14 @@ public class InlogScherm extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.dispose();
-        FullHouseMenu menu = new FullHouseMenu();
-        menu.setLocationRelativeTo(menu);
-        menu.setVisible(true);
+        String ingevuldWachtwoord = String.valueOf(wachtwoord.getPassword());
+        if(DBConnection.LoginCheck(gebruikersnaam.getText(), ingevuldWachtwoord)){
+            this.dispose();
+            FullHouseMenu menu = new FullHouseMenu();
+            menu.setLocationRelativeTo(menu);
+            menu.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Uw heeft een ongeldige naam of wachtwoord ingevuld.");
+        }
     }
 }
