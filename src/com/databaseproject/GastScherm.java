@@ -18,7 +18,6 @@ public class GastScherm extends JFrame implements ActionListener {
         setResizable(true);
         setSize(new Dimension(800, 600));
         GastComponent();
-
     }
 
     public void GastComponent() {
@@ -27,7 +26,7 @@ public class GastScherm extends JFrame implements ActionListener {
         panel.add(aanmelden);
         panel.add(verwijderen);
         add(new JScrollPane(tabel));
-        panel.add(tabel.getTableHeader());
+        //panel.add(tabel.getTableHeader());
         GridLayout grid = new GridLayout(3, 4, 30, 20);
         Container content = this.getContentPane();
         content.setLayout(grid);
