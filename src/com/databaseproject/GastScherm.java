@@ -6,10 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GastScherm extends JFrame implements ActionListener {
-    String data[][] = {{"101", "Jan", "100"}, {"102", "Piet", "200"}, {"101", " ", " "}};
-    String column[] = {"ID", "Naam", "Inleggeld"};
 
-    private JTable tabel = new JTable(data, column);
+    private JTable tabel;
 
     private JButton aanmelden = new JButton("Gast aanmelden");
     private JButton verwijderen = new JButton("Gast verwijderen/wijzigen");
@@ -20,6 +18,7 @@ public class GastScherm extends JFrame implements ActionListener {
         setResizable(true);
         setSize(new Dimension(800, 600));
         GastComponent();
+
     }
 
     public void GastComponent() {
@@ -35,6 +34,8 @@ public class GastScherm extends JFrame implements ActionListener {
         add(panel);
         pack();
     }
+
+
 
     @Override
     public void actionPerformed(ActionEvent e) {

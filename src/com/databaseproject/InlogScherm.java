@@ -19,8 +19,8 @@ public class InlogScherm extends JFrame implements ActionListener {
     public InlogScherm() throws HeadlessException {
         setTitle("FullHouse - inloggen");
         setDefaultCloseOperation(InlogScherm.EXIT_ON_CLOSE);
-        setResizable(false);
-        setSize(new Dimension(300, 300));
+        setResizable(true);
+        setSize(new Dimension(350, 300));
         InlogComponent();
     }
 
