@@ -6,12 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GastScherm extends JFrame implements ActionListener {
-
-    private JTable tabel;
-
+    private JTable tabel = new JTable();
     private JButton aanmelden = new JButton("Gast aanmelden");
     private JButton verwijderen = new JButton("Gast verwijderen/wijzigen");
     private JDialog aanmeldenDatabase = new JDialog();
+
+    DBConnection database = new DBConnection();
 
     public GastScherm() throws HeadlessException {
         setTitle("FullHouse - gast");
@@ -22,19 +22,18 @@ public class GastScherm extends JFrame implements ActionListener {
 
     public void GastComponent() {
         JPanel panel = new JPanel();
+
         aanmelden.addActionListener(this);
         panel.add(aanmelden);
         panel.add(verwijderen);
         add(new JScrollPane(tabel));
-        //panel.add(tabel.getTableHeader());
         GridLayout grid = new GridLayout(3, 4, 30, 20);
         Container content = this.getContentPane();
         content.setLayout(grid);
         add(panel);
+        tabel.setModel(database.gastLijst());
         pack();
     }
-
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
