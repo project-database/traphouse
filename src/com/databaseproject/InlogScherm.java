@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 public class InlogScherm extends JFrame implements ActionListener {
 
@@ -26,6 +27,8 @@ public class InlogScherm extends JFrame implements ActionListener {
 
     public void InlogComponent(){
         JPanel panel = new JPanel();
+
+
         //Gebruikersnaam
         gebruikersnaamTekst = new JLabel("Gebruikersnaam: ");
         gebruikersnaamTekst.setBounds(20,15, 150, 10);
@@ -48,6 +51,7 @@ public class InlogScherm extends JFrame implements ActionListener {
         inlogknop.addActionListener(this);
         panel.add(inlogknop);
         panel.setLayout(null);
+        wachtwoord.addActionListener(this);
         add(panel);
     }
 
